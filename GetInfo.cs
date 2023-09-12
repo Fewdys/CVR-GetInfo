@@ -11,7 +11,11 @@ namespace GetInfo
         private ViewManager _viewManager { get; set; }
 
         private UserProfile_t _userProfile { get; set; }
-        public override void OnApplicationStart() => MelonCoroutines.Start(WaitForUi());
+        public override void OnApplicationStart()
+        {
+            MelonCoroutines.Start(WaitForUi());
+            MelonLogger.Msg(System.ConsoleColor.Green, "Press G + I While Having A User Selected In The Big Menu");
+        }
 
         private IEnumerator WaitForUi()
         {
